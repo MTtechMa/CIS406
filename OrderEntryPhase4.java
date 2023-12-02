@@ -92,10 +92,33 @@ public class OrderEntryPhase4
 	
 		input.close();		
 		
+		System.out.println("\nInvoice Date: " + invoiceDate);
+		System.out.print("");
+		
+		System.out.println("\nCustomer Name\t\t" +
+							"Customer Street\t\t" +
+							"Customers City\t\t" +
+							"Customers State\t\t\t" +
+							"Customers Zipcode");
+		System.out.println("--------------\t\t" + 
+						   "----------------\t" +
+						   "---------------\t\t" +
+						   "----------------\t\t" +
+						   "------------------\t\t");
+		
+		
+		System.out.println(customerName + "\t\t\t" +
+						   streetAddress + "\t\t\t" +
+							customerCity + "\t\t\t" +
+						   customerState + "\t\t\t" +
+							zipCode);
+		System.out.println("");
+		
 		System.out.println("Item Number\t" +
 						   "Item Description\t" +
 						   "Item Price\t" +
 						   "Quantity\t" +
+						   "GrossAmt\t\t" +
 						   "Tax %\t\t" + 
 						   "Tax Amt\t\t" + 
 						   "Discount %\t" +
@@ -106,6 +129,7 @@ public class OrderEntryPhase4
 						   "-----------------\t" +
 						   "---------\t" +
 						   "--------\t" +
+						   "------\t\t" +
 						   "-----\t\t" +
 						   "--------\t" +
 						   "----------\t" +
@@ -117,6 +141,7 @@ public class OrderEntryPhase4
 							  itemDescription[i] + "\t" + "\t" + "\t" +
 							  itemPrice[i] + "\t" + "\t" +
 							  quantity[i] + "\t" + "\t" + 
+							  grossAmount[i] + "\t" + "\t" +
 							  taxPercentage[i] + "\t" + "\t" + 
 							  "$" + taxAmount[i] + "\t" + "\t" + 
 							  discountPercent[i] + "\t" + "\t" +
@@ -129,13 +154,13 @@ public class OrderEntryPhase4
 		         		 "\t\t" +
 		         		 "\t\t" +
 		         		 "\t\t" +
+		         		 "$" + grossAmount +
 		         		 "$" + totalTaxAmount + "\t" +
 		         		 "\t\t" + 
 		         		 "\t" +
 		         		 "$" + totalDiscountAmount + "\t\t" +
 		         		 "$" + totalNetAmount);	
-
-						  	 
+					  	 
 
 	}
 
