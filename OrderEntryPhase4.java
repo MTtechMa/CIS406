@@ -4,7 +4,6 @@
 
 package orderEntryPhase4;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 public class OrderEntryPhase4 
 {
 	public static void main(String[] args) 
@@ -45,7 +44,6 @@ public class OrderEntryPhase4
 		
 		while (addItems != 'n' && addItems != 'N') 
 			{
-			try {
 				System.out.print("Enter item number: ");
 				itemNumber[itemCount] = input.nextLine();
 		
@@ -63,16 +61,6 @@ public class OrderEntryPhase4
 		
 				System.out.print("Enter the discount percent of the item: ");
 				discountPercent[itemCount] = input.nextDouble();
-			}	
-			catch (InputMismatchException e) 
-			{
-				System.out.print("Input format error!");
-				e.printStackTrace();
-			}
-			catch (Exception e) 
-			{
-				System.out.println("Error! contact administrator!: ");		
-			}
 			
 				grossAmount[itemCount] = itemPrice[itemCount] * quantity[itemCount];
 				taxAmount[itemCount] = grossAmount[itemCount] * taxPercentage[itemCount] / 100.0;
@@ -87,31 +75,31 @@ public class OrderEntryPhase4
 			
 				System.out.print("\nEnter More Items? (y/n): ");
 				addItems = input.next().charAt(0);
-				response = input.nextLine();			  	
-			}		
+				response = input.nextLine();			  			
+			}
+		input.close();	
 	
-		input.close();		
-		
+				
 		System.out.println("\nInvoice Date: " + invoiceDate);
 		System.out.print("");
 		
-		System.out.println("\nCustomer Name\t\t" +
-							"Customer Street\t\t" +
-							"Customers City\t\t" +
-							"Customers State\t\t" +
+		System.out.println("\nCustomer Name\t" +
+							"Customer Street\t" +
+							"Customers City\t" +
+							"Customers State\t" + "\t" +
 							"Customers Zipcode");
 		
-		System.out.println( "--------------\t\t" + 
-						    "---------------\t\t" +
-						    "---------------\t\t" +
+		System.out.println( "--------------\t" + 
+						    "---------------\t" +
+						    "---------------\t" +
 						    "----------------\t" +
 						    "------------------");
 		
 		
-		System.out.println(customerName + "\t\t\t" +
-						   streetAddress + "\t\t" +
-							customerCity + "\t" +
-						   customerState + "\t" +
+		System.out.println(customerName + "\t" + "\t" +
+						   streetAddress + "\t" +
+						customerCity + "\t" + "\t" +
+						   customerState + "\t" + "\t" + "\t" +
 							zipCode);
 		
 		System.out.print(' ');
@@ -141,29 +129,26 @@ public class OrderEntryPhase4
 		
 		for (int i = 0; i < itemCount; i++)
 		{
-			System.out.println(itemNumber[i] + "\t"  + 
-							  itemDescription[i] + "\t" +
-							  "$" + itemPrice[i] + "\t" +
-							  quantity[i] + "\t" +  
-							  "$" + grossAmount[i] + "\t" + 
+			System.out.println(itemNumber[i] + "\t" + "\t"  +
+							  itemDescription[i] + "\t" + "\t"  + "\t" +
+							  "$" + itemPrice[i] + "\t" + "\t" +
+							  quantity[i] + "\t" + "\t" +
+							  "$" + grossAmount[i] + "\t" + "\t" +
 							  taxPercentage[i] + "%" + "\t" +
 							  "$" + taxAmount[i] + "\t" + 
-							  discountPercent[i] + "%" + "\t" + 
-							  "$" + discountAmount[i] + "\t" + 
+							  discountPercent[i] + "%" + "\t" + "\t" +
+							  "$" + discountAmount[i] + "\t" + "\t" +
 							  "$" + netAmount[i]);
 		}
 		System.out.println("\nTotals" + "\t\t" +
 		         		 "# items: " + itemCount + "\t" +
 		         		 "\t\t" +
 		         		 "\t\t\t" +
-		         		"$" + totalGrossAmount + "\t\t" +
-		         		 "\t\t" + 
-		         		 "$" + totalTaxAmount + "\t" +
-		         		 "\t\t" + 
-		         		 "$" + totalDiscountAmount + "\t" +
+		         		"$" + totalGrossAmount + "\t\t" + "\t" +
+		         		 "$" + totalTaxAmount + "\t\t" + "\t" +
+		         		 "$" + totalDiscountAmount + "\t" + "\t" +
 		         		 "$" + totalNetAmount);	
 					  	 
-
 	}
 
 }
