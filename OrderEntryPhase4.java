@@ -98,67 +98,69 @@ public class OrderEntryPhase4
 		System.out.println("\nCustomer Name\t\t" +
 							"Customer Street\t\t" +
 							"Customers City\t\t" +
-							"Customers State\t\t\t" +
+							"Customers State\t\t" +
 							"Customers Zipcode");
-		System.out.println("--------------\t\t" + 
-						   "----------------\t" +
-						   "---------------\t\t" +
-						   "----------------\t\t" +
-						   "------------------\t\t");
+		
+		System.out.println( "--------------\t\t" + 
+						    "---------------\t\t" +
+						    "---------------\t\t" +
+						    "----------------\t" +
+						    "------------------");
 		
 		
 		System.out.println(customerName + "\t\t\t" +
-						   streetAddress + "\t\t\t" +
-							customerCity + "\t\t\t" +
-						   customerState + "\t\t\t" +
+						   streetAddress + "\t\t" +
+							customerCity + "\t" +
+						   customerState + "\t" +
 							zipCode);
-		System.out.println("");
 		
-		System.out.println("Item Number\t" +
+		System.out.print(' ');
+		System.out.print(' ');
+		
+		
+		System.out.println("\nItem Number\t" +
 						   "Item Description\t" +
 						   "Item Price\t" +
 						   "Quantity\t" +
-						   "GrossAmt\t\t" +
-						   "Tax %\t\t" + 
-						   "Tax Amt\t\t" + 
-						   "Discount %\t" +
-						   "Discount Ammt\t" +
-				   		   "Net Amt");
-
-		System.out.println("----------\t" +
-						   "-----------------\t" +
-						   "---------\t" +
-						   "--------\t" +
-						   "------\t\t" +
-						   "-----\t\t" +
-						   "--------\t" +
-						   "----------\t" +
-						   "------------\t" +
-						   "-------");
+						   "Gross Amt\t" + 
+						   "Tax%\t" + 
+						   "Tax Amt\t" + 
+						   "Discount%\t" +
+						   "Discount Amt\t" +
+				   		   "Net Amt");	
+		System.out.println("------------\t" +
+				           "----------------\t" +
+				           "-----------\t" +
+				           "---------\t" +
+				           "----------\t" +
+				           "------\t" +
+				           "-------\t" +
+				           "---------\t" +
+				           "-------------\t" +
+				           "--------");
+		
 		for (int i = 0; i < itemCount; i++)
 		{
-			System.out.println(itemNumber[i] + "\t" + "\t" + 
-							  itemDescription[i] + "\t" + "\t" + "\t" +
-							  itemPrice[i] + "\t" + "\t" +
-							  quantity[i] + "\t" + "\t" + 
-							  grossAmount[i] + "\t" + "\t" +
-							  taxPercentage[i] + "\t" + "\t" + 
-							  "$" + taxAmount[i] + "\t" + "\t" + 
-							  discountPercent[i] + "\t" + "\t" +
-							  "$" + discountAmount[i] + "\t" + "\t" +
-							  "$" + netAmount[i] + "\t");
+			System.out.println(itemNumber[i] + "\t"  + 
+							  itemDescription[i] + "\t" +
+							  "$" + itemPrice[i] + "\t" +
+							  quantity[i] + "\t" +  
+							  "$" + grossAmount[i] + "\t" + 
+							  taxPercentage[i] + "%" + "\t" +
+							  "$" + taxAmount[i] + "\t" + 
+							  discountPercent[i] + "%" + "\t" + 
+							  "$" + discountAmount[i] + "\t" + 
+							  "$" + netAmount[i]);
 		}
 		System.out.println("\nTotals" + "\t\t" +
 		         		 "# items: " + itemCount + "\t" +
 		         		 "\t\t" +
-		         		 "\t\t" +
-		         		 "\t\t" +
-		         		 "\t\t" +
-		         		 "$" + grossAmount +
+		         		 "\t\t\t" +
+		         		"$" + totalGrossAmount + "\t\t" +
+		         		 "\t\t" + 
 		         		 "$" + totalTaxAmount + "\t" +
 		         		 "\t\t" + 
-		         		 "\t" +
-		         		 "$" + totalDiscountAmount + "\t\t" +
+		         		 "$" + totalDiscountAmount + "\t" +
 		         		 "$" + totalNetAmount);	
 					  	 
 
